@@ -3,10 +3,11 @@
 // 1949년 고안, 난수의 품질이 좋지 않아 현재는 사용하지 않는다.
 
 // 예시
-// X₁ = 1773, a = 4
-// X₁² = 3143529 → X₂ = 1435
-// X₂² = 2059225 → X₃ = 592
-// X₃² = 350464 → X₄ = 5046
+// X₀ = 1773, a = 4
+// X₀² = 3143529 → X₁ = 1435
+// X₁² = 2059225 → X₂ = 592
+// X₂² = 350464 → X₃ = 5046
+// X₃² = 25462116 → X₄ = 4621
 // ...
 
 // 코드
@@ -29,7 +30,7 @@ int main() {
     unsigned long long init = 1773;
     unsigned long long digit = 4;
     for (int i = 0; i<5; ++i) {
-        printf("%llu \n", init);
+        printf("X%d = %llu \n", i, init);
         init = middleSqaure(init, digit);
     }
 }
