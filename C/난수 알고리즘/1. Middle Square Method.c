@@ -14,12 +14,12 @@
 #include <stdio.h>
 #include <math.h>
 
-unsigned long long numDigits(unsigned long long number) {
+int numDigits(unsigned long long number) {
     return floor(log10(number)) + 1;
 }
 
-unsigned long long middleSqaure (unsigned long long init, unsigned long long digit) {
-    unsigned long long square = init * init;
+unsigned long long middleSqaure (unsigned long long seed, unsigned long long digit) {
+    unsigned long long square = seed * seed;
     unsigned long long squareDigit = numDigits(square);
     unsigned long long remainDigit = (squareDigit - digit) / 2;
     unsigned long long middle = (square % (unsigned long long)pow(10,squareDigit-remainDigit)) / (unsigned long long)pow(10,squareDigit-remainDigit-digit);
@@ -27,10 +27,10 @@ unsigned long long middleSqaure (unsigned long long init, unsigned long long dig
 }
 
 int main() {
-    unsigned long long init = 1773;
+    unsigned long long seed = 1773;
     unsigned long long digit = 4;
     for (int i = 0; i<5; ++i) {
-        printf("X%d = %llu \n", i, init);
-        init = middleSqaure(init, digit);
+        printf("X%d = %llu \n", i, seed);
+        seed = middleSqaure(seed, digit);
     }
 }
