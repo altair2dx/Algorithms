@@ -22,8 +22,7 @@ unsigned long long middleSqaure (unsigned long long seed, unsigned long long dig
     unsigned long long square = seed * seed;
     unsigned long long squareDigit = numDigits(square);
     unsigned long long remainDigit = (squareDigit - digit) / 2;
-    unsigned long long middle = (square % (unsigned long long)pow(10,squareDigit-remainDigit)) / (unsigned long long)pow(10,squareDigit-remainDigit-digit);
-    return middle;
+    return (square % (unsigned long long)pow(10,squareDigit-remainDigit)) / (unsigned long long)pow(10,squareDigit-remainDigit-digit);
 }
 
 int main() {
@@ -33,4 +32,6 @@ int main() {
         printf("X%d = %llu \n", i, seed);
         seed = middleSqaure(seed, digit);
     }
+
+    return 0;
 }
