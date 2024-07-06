@@ -19,6 +19,7 @@ $mt[i]=f \times (mt[i-1]\oplus{}(mt[i-1]>>(w-2)))+i$
 <br/>
     
   $$i\in[1,623]$$
+  
   <center>일 때,</center>
 
   $$mt[i]=\text{0x6C078965} \times (mt[i-1]\oplus{}(mt[i-1]>>30))+i$$
@@ -39,7 +40,7 @@ $xA=x>>1$
 
 $\text{if}\quad x\mod2\neq0:xA=xA\oplus a$
 
-$Twisted\;mt[i]=mt[(i+m)\mod n]\oplus xA$
+$Twisted\_mt[i]=mt[(i+m)\mod n]\oplus xA$
 
 <br/>
 
