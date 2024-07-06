@@ -17,12 +17,10 @@ $mt[i]=f \times (mt[i-1]\oplus{}(mt[i-1]>>(w-2)))+i$
 - MT19937 표준에서는 $n=624$, $w=32$, $f=1812433253_{10}=\text{0x6C078965}$ 이므로 초기 배열식은 다음과 같다.
 
 <br/>
-    
-  $$i\in[1,623]$$
-  
-  <center>일 때,</center>
 
   $$mt[i]=\text{0x6C078965} \times (mt[i-1]\oplus{}(mt[i-1]>>30))+i$$
+
+  $$i\in[1,623]$$
 
 <br/>
 
@@ -40,7 +38,7 @@ $xA=x>>1$
 
 $\text{if}\quad x\mod2\neq0:xA=xA\oplus a$
 
-$Twisted\_mt[i]=mt[(i+m)\mod n]\oplus xA$
+$Twisted$_$mt[i]=mt[(i+m)\mod n]\oplus xA$
 
 <br/>
 
