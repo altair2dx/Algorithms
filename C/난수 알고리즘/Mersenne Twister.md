@@ -36,9 +36,9 @@ $x=(mt[i]\wedge\text{UMASK})+(mt[(i+1)\mod n]\wedge\text{LMASK})$
 
 $xA=x>>1$
 
-$\text{if}\quad x\mod2\neq0:xA=xA\oplus a$
+$x\mod2\neq0→xA:= xA\oplus a$
 
-$Twisted$_$mt[i]=mt[(i+m)\mod n]\oplus xA$
+$mt[i]:=mt[(i+m)\mod n]\oplus xA$
 
 <br/>
 
