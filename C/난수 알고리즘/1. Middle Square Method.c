@@ -28,7 +28,7 @@ unsigned long long middleSqaure (unsigned long long seed, unsigned long long dig
 int main() {
     unsigned long long seed = 1773;
     unsigned long long digit = 4;
-    for (int i = 0; i<5; ++i) {
+    for (int i = 0; i<5; i++) {
         printf("X%d = %llu \n", i, seed);
         seed = middleSqaure(seed, digit);
     }

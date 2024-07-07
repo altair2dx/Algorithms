@@ -24,7 +24,7 @@ $mt[i]=f \times (mt[i-1]\oplus{}(mt[i-1]>>(w-2)))+i$
 
 <br/>
 
-<h2>난수의 무작위성을 위한 Twist</h2>
+<h2>Twist</h2>
 
 Twist 알고리즘은 다음과 같다.
 
