@@ -1,12 +1,24 @@
-메르센 트위스터
+메르센 트위스터 (Mersenne Twister)
 =============
 
-![image](https://github.com/altair2dx/Algorithms/assets/167539294/fbefb217-8b1e-49f6-ad0f-2a3ac76d897c)
+메르센 트위스터는 난수의 반복 주기가 메르센 소수인 난수 생성 알고리즘이다.
+
+<br/>
+
+<h3>특징</h3>
+
+- MT19937을 주로 사용한다. (주기가 $2^{19937} - 1$)
+
+- 품질 좋은 난수를 빠르게 생성할 수 있다.
+
+- 623차원까지 난수가 동일분포한다.
+
+- 암호학적으로 안전하지는 않다.
 
 <br/>
 
 
-<h2>Seed를 이용한 초기 배열 구성</h2>
+<h2>Seed 값을 이용한 배열 초기화</h2>
 
 $Seed = mt[0]$ , $i\in[1,n-1]$ 일 때, 다음과 같은 식으로 초기 배열 $(mt[1], \cdots, mt[n-1])$ 을 구한다.
 
@@ -43,8 +55,32 @@ $mt[i]:=mt[(i+m)\mod n]\oplus xA$
 <br/>
 
 
-- MT19937 표준에서 $n=624$, $m=397$, $\text{UMASK}=\text{0x80000000}$, $\text{LMASK}=\text{0x7fffffff}$, $a=\text{0x9908B0DF}$
+- MT19937 표준에서는 $n=624$, $m=397$, $\text{UMASK}=\text{0x80000000}$, $\text{LMASK}=\text{0x7fffffff}$, $a=\text{0x9908B0DF}$ 를 대입하면 된다.
 
 <br/>
 
 <h2>Temper</h2>
+
+1번 정수를 뽑아 아래 식을 이용해 Tempering 후 최종 값을 출력한다.
+
+$y=mt[1]\oplus((mt[1]>>u)\wedge d)$
+
+$y:=y\oplus((y<<s)\wedge b)$
+
+$y:=y\oplus((y<<t)\wedge c)$
+
+$y:=y\oplus(y>>l)$
+
+- MT19937 표준은 다음과 같다.
+
+  $y=mt[1]\oplus(mt[1]>>11)$
+
+  $y:=y\oplus((y<<7)\wedge \text{0x9D2C5680})$
+
+  $y:=y\oplus((y<<15)\wedge \text{0xEFC60000})$
+
+  $y:=y\oplus(y>>18)$
+
+<br/>
+
+이제 $y$를 출력한다.
