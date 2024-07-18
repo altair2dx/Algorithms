@@ -14,6 +14,11 @@ unsigned long long middleSqaure (unsigned long long seed, unsigned long long dig
 }
 
 int main() {
+    int TIME = 0;
+
+	clock_t start, end;
+	start = clock();
+
     unsigned long long seed = time(NULL);
     unsigned long long digit = 6;
     unsigned long long ms = middleSqaure(seed, digit); 
@@ -21,6 +26,9 @@ int main() {
         printf("X%d = %llu \n", i, ms);
         ms = middleSqaure(ms, digit);
     }
+
+    end = clock();
+	printf("%fms has been taken.\n", (float)(end - start)/CLOCKS_PER_SEC);
 
     return 0;
 }
